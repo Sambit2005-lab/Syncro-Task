@@ -12,27 +12,29 @@ import RequestCustom from "./components/usercomponents/RequestCustom";
 import BillingHistory from "./components/usercomponents/BillingHistory";
 import Subscription from "./components/usercomponents/Subscription";
 import ProfileSettings from "./components/usercomponents/ProfileSettings";
+import Contact from "./Pages/Contact/Contact.jsx";
 
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<UserLayout />}>
-          <Route index element={<Myservice />} />
-          <Route path="request-custom" element={<RequestCustom />} />
-          <Route path="billing-history" element={<BillingHistory />} />
-          <Route path="subscription" element={<Subscription />} />
-          <Route path="profile-settings" element={<ProfileSettings />} />
-        </Route>
+      {/*<Routes>*/}
+      {/*  <Route path="/" element={<UserLayout />}>*/}
+      {/*    <Route index element={<Myservice />} />*/}
+      {/*    <Route path="request-custom" element={<RequestCustom />} />*/}
+      {/*    <Route path="billing-history" element={<BillingHistory />} />*/}
+      {/*    <Route path="subscription" element={<Subscription />} />*/}
+      {/*    <Route path="profile-settings" element={<ProfileSettings />} />*/}
+      {/*  </Route>*/}
 
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="requests" element={<Requests />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="adminusers" element={<AdminUsers />} />
-        </Route>
-      </Routes>
+      {/*  <Route path="/admin" element={<AdminLayout />}>*/}
+      {/*    <Route index element={<AdminDashboard />} />*/}
+      {/*    <Route path="requests" element={<Requests />} />*/}
+      {/*    <Route path="pricing" element={<Pricing />} />*/}
+      {/*    <Route path="orders" element={<Orders />} />*/}
+      {/*    <Route path="adminusers" element={<AdminUsers />} />*/}
+      {/*  </Route>*/}
+      {/*</Routes>*/}
+      <Contact/>
     </Router>
   );
 };
