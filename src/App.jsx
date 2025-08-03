@@ -18,6 +18,7 @@ import Service from "./Pages/Service/Service.jsx";
 import FaqFooter from "./components/faq_footer.jsx";
 import Plan from "./Pages/Plan/Plan.jsx";
 import Navbar_1 from "./components/Navbar_1.jsx";
+import Services from "./components/Services.jsx";
 
 const App = () => {
   return (
@@ -47,7 +48,8 @@ const App = () => {
       {/*  <Service/>*/}
       {/*  <FaqFooter/>*/}
       {/*  <Plan/>*/}
-        <Navbar_1/>
+      {/*  <Navbar_1/>*/}
+        <Services/>
     </Router>
   );
 };
