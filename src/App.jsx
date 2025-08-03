@@ -13,6 +13,7 @@ import BillingHistory from "./components/usercomponents/BillingHistory";
 import Subscription from "./components/usercomponents/Subscription";
 import ProfileSettings from "./components/usercomponents/ProfileSettings";
 import Contact from "./Pages/Contact/Contact.jsx";
+import Sign_up from "./Pages/Sign_up/Sign_up.jsx";
 
 const App = () => {
   return (
@@ -34,7 +35,11 @@ const App = () => {
       {/*    <Route path="adminusers" element={<AdminUsers />} />*/}
       {/*  </Route>*/}
       {/*</Routes>*/}
-      <Contact/>
+
+
+
+      {/*<Contact/>*/}
+      <Sign_up/>
     </Router>
   );
 };
