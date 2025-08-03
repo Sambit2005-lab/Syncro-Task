@@ -17,6 +17,7 @@ import Sign_up from "./Pages/Sign_up/Sign_up.jsx";
 import Service from "./Pages/Service/Service.jsx";
 import FaqFooter from "./components/faq_footer.jsx";
 import Plan from "./Pages/Plan/Plan.jsx";
+import Navbar_1 from "./components/Navbar_1.jsx";
 
 const App = () => {
   return (
@@ -45,7 +46,8 @@ const App = () => {
       {/*<Sign_up/>*/}
       {/*  <Service/>*/}
       {/*  <FaqFooter/>*/}
-        <Plan/>
+      {/*  <Plan/>*/}
+        <Navbar_1/>
     </Router>
   );
 };
