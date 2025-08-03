@@ -14,6 +14,7 @@ import Subscription from "./components/usercomponents/Subscription";
 import ProfileSettings from "./components/usercomponents/ProfileSettings";
 import Contact from "./Pages/Contact/Contact.jsx";
 import Sign_up from "./Pages/Sign_up/Sign_up.jsx";
+import Service from "./Pages/Service/Service.jsx";
 
 const App = () => {
   return (
@@ -39,7 +40,8 @@ const App = () => {
 
 
       {/*<Contact/>*/}
-      <Sign_up/>
+      {/*<Sign_up/>*/}
+        <Service/>
     </Router>
   );
 };
