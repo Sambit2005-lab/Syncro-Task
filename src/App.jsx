@@ -21,6 +21,7 @@ import Navbar_1 from "./components/Navbar_1.jsx";
 import Services from "./components/Services.jsx";
 import PricingPlans from "./components/Pricing_plans.jsx";
 import About_us from "./components/About_us.jsx";
+import Home from "./Pages/Home/Home.jsx";
 
 const App = () => {
   return (
@@ -47,13 +48,14 @@ const App = () => {
 
       {/*<Contact/>*/}
       {/*<Sign_up/>*/}
-      {/*  <Service/>*/}
+        <Service/>
       {/*  <FaqFooter/>*/}
       {/*  <Plan/>*/}
       {/*  <Navbar_1/>*/}
       {/*  <Services/>*/}
       {/*  <PricingPlans/>*/}
-        <About_us/>
+      {/*  <About_us/>*/}
+      {/*  <Home/>*/}
     </Router>
   );
 };
