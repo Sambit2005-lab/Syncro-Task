@@ -47,11 +47,23 @@ const App = () => {
 
 
 
-            <Route path="/" element={<Home />} >
-                <Route path="/about_us" element={<About_us/>} />
-                <Route path="/contact" element={<Contact/>} />
-            </Route>
+            <Route path="/" element={<Home />} />
+            {/*<Route path="/about_us" element={<About_us/>} />*/}
+            <Route path="/custom-service" element={<Service/>} />
+            <Route path="/pricing" element={<Plan/>} />
+            <Route path="/contact" element={<Contact/>} />
 
+            {/*<Route path="/login" element={<Login/>} />*/}
+            <Route path="/sign_up" element={<Sign_up/>} />
+
+            <Route
+                path="*"
+                element={
+                    <div className="p-10 text-center text-xl text-red-500">
+                        404 - Page Not Found
+                    </div>
+                }
+            />
 
 
         </Routes>

@@ -18,7 +18,8 @@ const Contact = () => {
     return (
         <div
             className="min-h-screen w-full font-poppins bg-cover bg-center"
-            style={{ backgroundImage: `url(${bgUrl})` }}
+            style={{ backgroundImage: `url(${bgUrl})` }
+        }
         >
             {/* ==================== NAVBAR ==================== */}
             <nav className="w-full max-w-full px-4 md:px-10 py-4 flex items-center justify-between relative z-50">

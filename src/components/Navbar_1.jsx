@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar_1 = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -16,8 +17,8 @@ const Navbar_1 = () => {
         box-border
       "
         >
-            <a
-                href="#"
+            <Link
+                to="/"
                 className="
           text-[#e1d5f9]
           font-bold
@@ -28,9 +29,8 @@ const Navbar_1 = () => {
         "
                 aria-label="Brand"
             >
-                {/* Brand content (text/logo) can be placed here */}
                 {/*Brand*/}
-            </a>
+            </Link>
 
             {/* Hamburger button (hidden on md and above) */}
             <button
@@ -85,37 +85,81 @@ const Navbar_1 = () => {
             w-full md:w-auto
           "
                 >
-                    {[
-                        { name: "Home", href: "#" },
-                        { name: "About Us", href: "#" },
-                        { name: "Custom Service", href: "#" },
-                        { name: "Pricing", href: "#" },
-                        { name: "Contact", href: "#" },
-                    ].map(({ name, href }) => (
-                        <li key={name}>
-                            <a
-                                href={href}
-                                className="
-                  block
-                  text-[#e1d5f9]
-                  font-semibold
-                  uppercase
-                  text-[clamp(0.78rem,1vw,1rem)]
-                  rounded-md
-                  tracking-wide
-                  px-4 py-2
-                  transition-colors duration-200
-                  hover:bg-[#1d0537]
-                  hover:text-[#d4adfc]
-                  focus:outline-none
-                  focus:bg-[#1d0537]
-                  focus:text-[#d4adfc]
-                "
-                            >
-                                {name}
-                            </a>
-                        </li>
-                    ))}
+                    <li>
+                        <Link
+                            to="/"
+                            className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/about_us"
+                            className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            About Us
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/custom-service"
+                            className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Custom Service
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/pricing"
+                            className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Pricing
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/contact"
+                            className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Contact
+                        </Link>
+                    </li>
                 </ul>
 
                 {/* Buttons */}
@@ -127,8 +171,8 @@ const Navbar_1 = () => {
             ml-0 md:ml-2
           "
                 >
-                    <button
-                        type="button"
+                    <Link
+                        to="/login"
                         className="
               w-full md:w-auto
               px-5 py-2
@@ -144,12 +188,14 @@ const Navbar_1 = () => {
               hover:opacity-80
               focus:outline-none
               focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+              text-center
             "
+                        onClick={() => setMenuOpen(false)}
                     >
                         Log In
-                    </button>
-                    <button
-                        type="button"
+                    </Link>
+                    <Link
+                        to="/sign_up"
                         className="
               w-full md:w-auto
               px-5 py-2
@@ -165,10 +211,12 @@ const Navbar_1 = () => {
               hover:opacity-80
               focus:outline-none
               focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+              text-center
             "
+                        onClick={() => setMenuOpen(false)}
                     >
                         Sign Up
-                    </button>
+                    </Link>
                 </div>
             </div>
         </nav>

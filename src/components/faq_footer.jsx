@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoAddOutline, IoRemoveOutline } from "react-icons/io5";
-import sampleImg from "/public/vite.svg"; // adjust relative to your project structure
+import sampleImg from "/src/vite.svg"; // adjust relative to your project structure
 
 const faqData = [
     {
