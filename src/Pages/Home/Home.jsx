@@ -8,11 +8,13 @@ import FaqFooter from '../../components/faq_footer.jsx';
 function Home() {
     return (
         <>
+
           <Navbar/>
             <Services/>
             <PricingPlans/>
             <About_us/>
             <FaqFooter/>
+
 
 
 

@@ -26,29 +26,42 @@ import Home from "./Pages/Home/Home.jsx";
 const App = () => {
   return (
     <Router>
-      {/*<Routes>*/}
-      {/*  <Route path="/" element={<UserLayout />}>*/}
-      {/*    <Route index element={<Myservice />} />*/}
-      {/*    <Route path="request-custom" element={<RequestCustom />} />*/}
-      {/*    <Route path="billing-history" element={<BillingHistory />} />*/}
-      {/*    <Route path="subscription" element={<Subscription />} />*/}
-      {/*    <Route path="profile-settings" element={<ProfileSettings />} />*/}
-      {/*  </Route>*/}
+        <Routes>
+            {/* User Routes */}
+            <Route path="/user" element={<UserLayout />}>
+                <Route index element={<Myservice />} />
+                <Route path="request-custom" element={<RequestCustom />} />
+                <Route path="billing-history" element={<BillingHistory />} />
+                <Route path="subscription" element={<Subscription />} />
+                <Route path="profile-settings" element={<ProfileSettings />} />
+            </Route>
 
-      {/*  <Route path="/admin" element={<AdminLayout />}>*/}
-      {/*    <Route index element={<AdminDashboard />} />*/}
-      {/*    <Route path="requests" element={<Requests />} />*/}
-      {/*    <Route path="pricing" element={<Pricing />} />*/}
-      {/*    <Route path="orders" element={<Orders />} />*/}
-      {/*    <Route path="adminusers" element={<AdminUsers />} />*/}
-      {/*  </Route>*/}
-      {/*</Routes>*/}
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="requests" element={<Requests />} />
+                <Route path="pricing" element={<Pricing />} />
+                <Route path="orders" element={<Orders />} />
+                <Route path="adminusers" element={<AdminUsers />} />
+            </Route>
+
+
+
+            <Route path="/" element={<Home />} >
+                <Route path="/about_us" element={<About_us/>} />
+                <Route path="/contact" element={<Contact/>} />
+            </Route>
+
+
+
+        </Routes>
+
 
 
 
       {/*<Contact/>*/}
       {/*<Sign_up/>*/}
-        <Service/>
+      {/*  <Service/>*/}
       {/*  <FaqFooter/>*/}
       {/*  <Plan/>*/}
       {/*  <Navbar_1/>*/}
@@ -59,5 +72,8 @@ const App = () => {
     </Router>
   );
 };
+
+
+
 
 export default App;
