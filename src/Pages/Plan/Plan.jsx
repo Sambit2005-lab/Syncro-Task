@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import FaqFooter from "../../components/faq_footer.jsx";
-import planBg from "../../../src/assets/plan_bkg.svg"; // Adjust relative path if needed
+// import planBg from "../../../src/assets/plan_bkg.svg";
 
 const plans = [
     {
@@ -61,16 +61,17 @@ const Plan = () => {
 
     return (
         <>
-            <div className="min-h-screen font-poppins text-white bg-gray-900 ">
+            <div className="min-h-screen font-poppins text-white bg-[url('/src/assets/plan_bkg.svg')] bg-no-repeat bg-center bg-contain min-h-[600px] w-full ">
                 {/* Wrapper with background image for Navbar, Bundles, and Service Table */}
                 <div
-                    style={{
-                        backgroundImage: `url(${planBg})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-                        backgroundSize: "contain",
-                    }}
-                    className="min-h-[600px] w-full"
+                    // style={{
+                    //     backgroundImage: "url(${planBg})",
+                    //     backgroundRepeat: "no-repeat",
+                    //     backgroundPosition: "center",
+                    //     backgroundSize: "contain",
+                    // }}
+
+                    className="bg-[url('/src/assets/plan_bkg.svg')] bg-repeat bg-center bg-contain min-h-[600px] w-full"
                 >
                     {/* Navbar */}
                     <nav className="max-w-full flex justify-between items-center px-4 sm:px-8 md:px-16 py-5 relative z-50 bg-transparent">
