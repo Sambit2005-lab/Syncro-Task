@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { IoAddOutline, IoRemoveOutline } from 'react-icons/io5';
-import { FaCircle, FaRobot, FaUserEdit, FaRecycle } from 'react-icons/fa';
+import { FaCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import resumeImg from '../../assets/resume_bg.png'; // Your resume background image
-import faqFooterBg from '../../assets/faq_footer_bkg.png'; // Background for FAQ/Footer
+import faqFooterBg from '../../assets/faq_footer_bkg.png';
 
+// Plans data
 const plans = [
     {
         name: 'Basic',
@@ -29,6 +31,7 @@ const plans = [
     },
 ];
 
+// Features list
 const features = [
     'AI-powered draft based on your input',
     'Human expert editing for clarity and impact',
@@ -38,6 +41,7 @@ const features = [
     '2 free revisions included',
 ];
 
+// FAQ data
 const faqData = [
     {
         question: 'How does AI convert text to video, automatically?',
@@ -62,6 +66,7 @@ const faqData = [
     },
 ];
 
+// Footer sections and links
 const footerSections = ['Product', 'Support', 'Resources', 'About'];
 const footerLinks = [
     'What’s New',
@@ -95,9 +100,13 @@ const Service = () => {
         <div className="font-poppins text-white bg-gray-900">
             {/* Navbar */}
             <nav className="max-w-full flex justify-between items-center px-6 md:px-16 py-5 bg-gradient-to-b from-[#160d27f2] to-[#160d27f2] fixed top-0 left-0 w-full z-50">
-                <a href="#" className="text-[#e1d5f9] font-bold text-[clamp(1rem,2.5vw,2rem)] tracking-wide">
-                    {/* Brand - Insert logo/text here if needed */}
-                </a>
+                <Link
+                    to="/"
+                    className="text-[#e1d5f9] font-bold text-[clamp(1rem,2.5vw,2rem)] tracking-wide"
+                    aria-label="Brand"
+                >
+                    {/* Brand content here */}
+                </Link>
 
                 {/* Hamburger */}
                 <button
@@ -119,24 +128,65 @@ const Service = () => {
                     }`}
                 >
                     <ul className="flex flex-col md:flex-row gap-6 md:gap-12 w-full md:w-auto mb-6 md:mb-0">
-                        {['Home', 'About Us', 'Custom Service', 'Pricing', 'Contact'].map((link) => (
-                            <li key={link}>
-                                <a
-                                    href="#"
-                                    className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                >
-                                    {link}
-                                </a>
-                            </li>
-                        ))}
+                        <li>
+                            <Link
+                                to="/"
+                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                onClick={() => setMenuOpen(false)} // optional to close mobile menu on click
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/about_us"
+                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                About Us
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/custom-service"
+                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Custom Service
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/pricing"
+                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Pricing
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/contact"
+                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Contact
+                            </Link>
+                        </li>
                     </ul>
+
+
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full md:w-auto">
-                        <button className="border border-white text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
-                            Log In
-                        </button>
-                        <button className="bg-gradient-to-r from-[#d946ef] to-[#9333ea] text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
-                            Sign Up
-                        </button>
+                        <Link to="/login" onClick={() => setMenuOpen(false)}>
+                            <button className="border border-white text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
+                                Log In
+                            </button>
+                        </Link>
+                        <Link to="/sign_up" onClick={() => setMenuOpen(false)}>
+                            <button className="bg-gradient-to-r from-[#d946ef] to-[#9333ea] text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
+                                Sign Up
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </nav>
@@ -154,7 +204,9 @@ const Service = () => {
                 <div className="flex-1 max-w-lg z-10">
                     <h1 className="font-bold text-[clamp(1.8rem,4vw,2.5rem)] leading-tight">Resume Creation</h1>
                     <h1 className="font-bold text-[clamp(1.8rem,4vw,2.5rem)] leading-tight mt-[-15px] mb-12">Service</h1>
-                    <p className="text-[#cccccc] text-[clamp(0.9rem,2vw,1rem)] mb-12">AI-Generated. Human-Perfected. Land More Interviews</p>
+                    <p className="text-[#cccccc] text-[clamp(0.9rem,2vw,1rem)] mb-12">
+                        AI-Generated. Human-Perfected. Land More Interviews
+                    </p>
                     <div className="flex flex-wrap gap-4">
                         <button className="px-6 py-3 border border-[#a879ff] rounded-full text-[#a879ff] text-sm hover:bg-[#a879ff] hover:text-black transition">
                             Place Order ↗
@@ -229,8 +281,7 @@ const Service = () => {
                                     ))}
                                 </ul>
                                 <button
-                                    className={`w-full max-w-xs py-2.5 rounded-lg font-semibold cursor-pointer transition-colors
-                    ${
+                                    className={`w-full max-w-xs py-2.5 rounded-lg font-semibold cursor-pointer transition-colors ${
                                         plan.highlight
                                             ? 'bg-transparent border-white border-[1.5px] text-white hover:bg-white hover:text-[#6f2dbd]'
                                             : 'bg-transparent border-[#a558f3] border-[1.5px] text-[#a558f3] hover:bg-[#a558f3] hover:text-white'
@@ -249,8 +300,6 @@ const Service = () => {
                 className="relative py-16 px-6 md:px-16 bg-cover bg-center"
                 style={{ backgroundImage: `url(${faqFooterBg.src || faqFooterBg})` }}
             >
-                {/* Removed orbit animation and dots as requested */}
-
                 <div className="max-w-6xl mx-auto relative z-10">
                     <div className="flex items-center mb-8 justify-center md:justify-start">
                         <HeadingBlock text="FAQ" />
@@ -321,7 +370,9 @@ const Service = () => {
                         <div className="flex flex-col md:flex-row gap-10 justify-between items-start md:items-center flex-wrap max-w-6xl mx-auto mb-12">
                             <div className="flex-1 min-w-[280px]">
                                 <h4 className="text-[clamp(1rem,2vw,1.2rem)] mb-2">Never miss an update</h4>
-                                <p className="text-sm text-gray-400 max-w-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolor?</p>
+                                <p className="text-sm text-gray-400 max-w-xs">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolor?
+                                </p>
                             </div>
                             <div className="flex-1 min-w-[280px] max-w-md flex flex-col gap-3 w-full">
                                 <form className="flex gap-2 w-full max-w-md">
@@ -349,15 +400,17 @@ const Service = () => {
                                 ©2025 by <span className="text-yellow-400 font-semibold">Code-X-Novas</span>
                             </p>
                             <div className="flex gap-6 flex-wrap">
-                                <a href="#" className="hover:text-yellow-400 transition">Privacy Policy</a>
-                                <a href="#" className="hover:text-yellow-400 transition">Terms of Service</a>
+                                <a href="#" className="hover:text-yellow-400 transition">
+                                    Privacy Policy
+                                </a>
+                                <a href="#" className="hover:text-yellow-400 transition">
+                                    Terms of Service
+                                </a>
                             </div>
                         </div>
                     </footer>
                 </div>
             </div>
-
-            {/* Remove orbit keyframe style since orbit is removed */}
         </div>
     );
 };
