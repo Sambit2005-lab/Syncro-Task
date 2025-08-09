@@ -51,7 +51,7 @@ const FaqFooter = () => {
             className="py-16 px-10 bg-cover bg-center"
             style={{ backgroundImage: "url('../src/assets/faq_footer_bkg.png')" }}
         >
-            {/* Heading Block with underline lines */}
+            {/* Heading Block */}
             <div className="flex items-center mb-9 w-fit">
                 <h2 className="text-white text-[3.5rem] font-bold mr-8 leading-[1.15] font-inter">
                     FAQ
@@ -62,7 +62,7 @@ const FaqFooter = () => {
                 </div>
             </div>
 
-            {/* FAQ List */}
+            {/* FAQ Accordion */}
             <div className="flex flex-col gap-6">
                 {faqData.map((faq, index) => (
                     <div
@@ -70,6 +70,7 @@ const FaqFooter = () => {
                         className="bg-white rounded-lg shadow-md overflow-hidden relative transition-all ease-in-out"
                     >
                         {activeIndex !== index ? (
+                            // Collapsed state
                             <div
                                 className="flex justify-between items-center p-4 cursor-pointer font-semibold text-base text-black bg-gray-100"
                                 onClick={() => toggleAccordion(index)}
@@ -82,13 +83,16 @@ const FaqFooter = () => {
                             >
                                 <span>{faq.question}</span>
                                 <span
-                                    className="w-9 h-9 flex justify-center items-center border-2 border-[#7028e4] bg-white text-[#7028e4] rounded-full text-xl transition-transform hover:scale-110 shadow-md shadow-[#7028e4]/50"
+                                    className="w-9 h-9 flex-shrink-0 flex justify-center items-center border-2 border-[#7028e4]
+                  bg-white text-[#7028e4] rounded-full text-xl
+                  transition-transform hover:scale-110 shadow-md shadow-[#7028e4]/50"
                                     aria-label="Expand Answer"
                                 >
                   <IoAddOutline />
                 </span>
                             </div>
                         ) : (
+                            // Expanded state (with absolute top-right minus button)
                             <div className="flex flex-wrap items-center gap-6 p-6 text-white bg-gradient-to-tr from-pink-400 via-purple-700 to-purple-900 relative">
                                 <img
                                     src={faq.image}
@@ -101,7 +105,8 @@ const FaqFooter = () => {
                                 </div>
                                 <span
                                     onClick={() => toggleAccordion(index)}
-                                    className="absolute top-4 right-4 text-2xl cursor-pointer hover:text-gray-300"
+                                    className="absolute top-4 right-4 w-9 h-9 flex-shrink-0 flex justify-center items-center rounded-full
+                  text-2xl  cursor-pointer hover:bg-white/20"
                                     aria-label="Collapse Answer"
                                     role="button"
                                     tabIndex={0}
