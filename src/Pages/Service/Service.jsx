@@ -99,40 +99,99 @@ const Service = () => {
     return (
         <div className="font-poppins text-white bg-gray-900">
             {/* Navbar */}
-            <nav className="max-w-full flex justify-between items-center px-6 md:px-16 py-5 bg-gradient-to-b from-[#160d27f2] to-[#160d27f2] fixed top-0 left-0 w-full z-50">
+            <nav
+                className="
+        w-full max-w-full
+        px-[clamp(0.8rem,2vw,1.8rem)]
+        md:px-[clamp(1rem,5vw,4rem)]
+        py-3
+        pt-6
+        pb-6
+        bg-[#10001e]
+        flex justify-between items-center
+        relative z-50
+        box-border
+      "
+            >
                 <Link
                     to="/"
-                    className="text-[#e1d5f9] font-bold text-[clamp(1rem,2.5vw,2rem)] tracking-wide"
+                    className="
+          text-[#e1d5f9]
+          font-bold
+          text-[clamp(1rem,2.5vw,2rem)]
+          tracking-wide
+          no-underline
+          select-none
+        "
                     aria-label="Brand"
                 >
-                    {/* Brand content here */}
+                    {/*Brand*/}
                 </Link>
 
-                {/* Hamburger */}
+                {/* Hamburger button (hidden on md and above) */}
                 <button
-                    className="md:hidden flex flex-col gap-1.5 w-9 h-9 p-1.5 justify-center items-center border-none bg-transparent cursor-pointer"
                     aria-label="Toggle Menu"
                     onClick={() => setMenuOpen(!menuOpen)}
+                    className="
+          md:hidden
+          flex flex-col gap-1.5
+          w-9 h-9 p-1.5
+          justify-center items-center
+          bg-transparent border-none cursor-pointer
+          focus:outline-none
+        "
                 >
-                    <span className="block w-6 h-[3px] bg-white rounded transition-all"></span>
-                    <span className="block w-6 h-[3px] bg-white rounded transition-all"></span>
-                    <span className="block w-6 h-[3px] bg-white rounded transition-all"></span>
+        <span
+            className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                menuOpen ? "rotate-45 translate-y-[6px]" : ""
+            }`}
+        />
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? "opacity-0" : "opacity-100"
+                        }`}
+                    />
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+                        }`}
+                    />
                 </button>
 
-                {/* Menu */}
+                {/* Menu Wrapper */}
                 <div
-                    className={`flex items-center gap-8 transition-all duration-300 ${
+                    className={`
+          md:flex md:items-center
+          gap-8
+          transition-all duration-300 ease-in-out
+          ${
                         menuOpen
-                            ? 'absolute top-full left-0 w-full flex-col bg-[#16072d] p-6 pt-8 md:static md:flex-row md:bg-transparent md:p-0'
-                            : 'hidden md:flex'
-                    }`}
+                            ? "absolute top-full left-0 w-full flex flex-col bg-[#16072d] p-6 pt-8 z-40 md:static md:flex-row md:bg-transparent md:p-0"
+                            : "hidden md:flex"
+                    }
+        `}
                 >
-                    <ul className="flex flex-col md:flex-row gap-6 md:gap-12 w-full md:w-auto mb-6 md:mb-0">
+                    {/* Navigation Links */}
+                    <ul
+                        className="
+            list-none
+            flex flex-col md:flex-row
+            gap-[clamp(0.8rem,2vw,3rem)]
+            m-0 p-0
+            w-full md:w-auto
+          "
+                    >
                         <li>
                             <Link
                                 to="/"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                onClick={() => setMenuOpen(false)} // optional to close mobile menu on click
+                                className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                                onClick={() => setMenuOpen(false)}
                             >
                                 Home
                             </Link>
@@ -140,7 +199,13 @@ const Service = () => {
                         <li>
                             <Link
                                 to="/about_us"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
                                 onClick={() => setMenuOpen(false)}
                             >
                                 About Us
@@ -149,7 +214,13 @@ const Service = () => {
                         <li>
                             <Link
                                 to="/custom-service"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
                                 onClick={() => setMenuOpen(false)}
                             >
                                 Custom Service
@@ -158,7 +229,13 @@ const Service = () => {
                         <li>
                             <Link
                                 to="/pricing"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
                                 onClick={() => setMenuOpen(false)}
                             >
                                 Pricing
@@ -167,7 +244,13 @@ const Service = () => {
                         <li>
                             <Link
                                 to="/contact"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
+                                className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
                                 onClick={() => setMenuOpen(false)}
                             >
                                 Contact
@@ -175,24 +258,64 @@ const Service = () => {
                         </li>
                     </ul>
 
-
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full md:w-auto">
-                        <Link to="/login" onClick={() => setMenuOpen(false)}>
-                            <button className="border border-white text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
-                                Log In
-                            </button>
+                    {/* Buttons */}
+                    <div
+                        className="
+            flex flex-col md:flex-row
+            gap-3 md:gap-4
+            w-full md:w-auto
+            ml-0 md:ml-2
+          "
+                    >
+                        <Link
+                            to="/login"
+                            className="
+              w-full md:w-auto
+              px-5 py-2
+              border border-white
+              rounded-md
+              font-semibold
+              uppercase
+              text-[clamp(0.72rem,1vw,1rem)]
+              bg-transparent
+              text-white
+              cursor-pointer
+              transition-opacity duration-200
+              hover:opacity-80
+              focus:outline-none
+              focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+              text-center
+            "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Log In
                         </Link>
-                        <Link to="/sign_up" onClick={() => setMenuOpen(false)}>
-                            <button className="bg-gradient-to-r from-[#d946ef] to-[#9333ea] text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
-                                Sign Up
-                            </button>
+                        <Link
+                            to="/sign_up"
+                            className="
+              w-full md:w-auto
+              px-5 py-2
+              rounded-md
+              font-semibold
+              uppercase
+              text-[clamp(0.72rem,1vw,1rem)]
+              bg-gradient-to-r from-[#d946ef] to-[#9333ea]
+              border-none
+              text-white
+              cursor-pointer
+              transition-opacity duration-200
+              hover:opacity-80
+              focus:outline-none
+              focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+              text-center
+            "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Sign Up
                         </Link>
                     </div>
                 </div>
             </nav>
-
-            {/* Spacer for fixed navbar */}
-            <div className="h-[72px] md:h-[88px]" />
 
             {/* Resume Creation */}
             <section
@@ -317,7 +440,9 @@ const Service = () => {
                                         aria-expanded={activeIndex === idx}
                                     >
                                         <span>{faq.question}</span>
-                                        <span className="w-9 h-9 flex justify-center items-center border-2 border-[#7028e4] bg-white text-[#7028e4] rounded-full text-xl transition-transform hover:scale-110 shadow-md shadow-[#7028e4]/50">
+                                        <span className="w-9 h-9 flex-shrink-0 flex justify-center items-center border-2 border-[#7028e4]
+                  bg-white text-[#7028e4] rounded-full text-xl
+                  transition-transform hover:scale-110 shadow-md shadow-[#7028e4]/50">
                                             <IoAddOutline />
                                         </span>
                                     </div>
