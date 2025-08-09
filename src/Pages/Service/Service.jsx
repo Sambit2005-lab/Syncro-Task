@@ -79,14 +79,17 @@ const footerLinks = [
 
 // Reusable heading block component with consistent styling & underline lines
 const HeadingBlock = ({ text }) => (
-    <div className="flex items-center mb-8">
-        <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-white mr-8 leading-[2.15]">{text}</h2>
-        <div className="flex flex-col gap-4 mt-4">
-            <div className="w-24 h-1.5 bg-[#9333ea] rounded"></div>
-            <div className="w-15 h-1.5 bg-[#9333ea] rounded"></div>
+    <div className="flex justify-start items-center gap-x-6 sm:gap-x-8 mb-8 flex-nowrap min-w-0 w-full">
+        <h2 className="shrink font-bold text-white leading-[1.15] text-[clamp(1.15rem,5vw,2rem)] sm:text-[clamp(1.5rem,3vw,2.5rem)] mb-2">
+            {text}
+        </h2>
+        <div className="flex flex-col justify-center gap-y-2 shrink-0">
+            <div className="w-[80px] sm:w-[100px] h-[3px] rounded bg-[#9333ea]" />
+            <div className="w-[48px] sm:w-[60px] h-[3px] rounded bg-[#9333ea]" />
         </div>
     </div>
 );
+
 
 const Service = () => {
     const [activeIndex, setActiveIndex] = useState(null);
