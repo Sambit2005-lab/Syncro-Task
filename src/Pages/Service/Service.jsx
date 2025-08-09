@@ -3,32 +3,14 @@ import { IoAddOutline, IoRemoveOutline } from 'react-icons/io5';
 import { FaCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-import resumeImg from '../../assets/resume_bg.png'; // Your resume background image
+import resumeImg from '../../assets/resume_bg.png';
 import faqFooterBg from '../../assets/faq_footer_bkg.png';
 
 // Plans data
 const plans = [
-    {
-        name: 'Basic',
-        price: '$29',
-        per: '/month',
-        features: ['Access to gym', 'Basic equipment', 'Locker room access', 'Free parking'],
-        highlight: false,
-    },
-    {
-        name: 'Premium',
-        price: '$29',
-        per: '/month',
-        features: ['Access to gym', 'Basic equipment', 'Locker room access', 'Free parking'],
-        highlight: true,
-    },
-    {
-        name: 'Elite',
-        price: '$29',
-        per: '/month',
-        features: ['Access to gym', 'Basic equipment', 'Locker room access', 'Free parking'],
-        highlight: false,
-    },
+    { name: 'Basic', price: '$29', per: '/month', features: ['Access to gym', 'Basic equipment', 'Locker room access', 'Free parking'], highlight: false },
+    { name: 'Premium', price: '$29', per: '/month', features: ['Access to gym', 'Basic equipment', 'Locker room access', 'Free parking'], highlight: true },
+    { name: 'Elite', price: '$29', per: '/month', features: ['Access to gym', 'Basic equipment', 'Locker room access', 'Free parking'], highlight: false },
 ];
 
 // Features list
@@ -43,41 +25,17 @@ const features = [
 
 // FAQ data
 const faqData = [
-    {
-        question: 'How does AI convert text to video, automatically?',
-        answer:
-            'It enables us to focus more on content rather than polishing animations manually. Thanks to the Figma plugin, workflow is smoother.',
-        image: '/vite.svg',
-    },
-    {
-        question: 'What tech powers the AI video generator?',
-        answer: 'AI uses deep learning and text-to-scene tools to create animations based on your input.',
-        image: '/vite.svg',
-    },
-    {
-        question: 'Can I customize the generated videos?',
-        answer: 'Yes, you can adjust scenes, characters, and voiceovers using our intuitive editor.',
-        image: '/vite.svg',
-    },
-    {
-        question: 'Is this suitable for marketing or education?',
-        answer: 'Absolutely! The platform supports templates for both educational and promotional use cases.',
-        image: '/vite.svg',
-    },
+    { question: 'How does AI convert text to video, automatically?', answer: 'It enables us to focus more on content rather than polishing animations manually. Thanks to the Figma plugin, workflow is smoother.', image: '/vite.svg' },
+    { question: 'What tech powers the AI video generator?', answer: 'AI uses deep learning and text-to-scene tools to create animations based on your input.', image: '/vite.svg' },
+    { question: 'Can I customize the generated videos?', answer: 'Yes, you can adjust scenes, characters, and voiceovers using our intuitive editor.', image: '/vite.svg' },
+    { question: 'Is this suitable for marketing or education?', answer: 'Absolutely! The platform supports templates for both educational and promotional use cases.', image: '/vite.svg' },
 ];
 
 // Footer sections and links
 const footerSections = ['Product', 'Support', 'Resources', 'About'];
-const footerLinks = [
-    'What’s New',
-    'Design',
-    'Collaboration',
-    'Prototyping',
-    'Developer Handoff',
-    'All Features',
-];
+const footerLinks = ['What’s New', 'Design', 'Collaboration', 'Prototyping', 'Developer Handoff', 'All Features'];
 
-// Reusable heading block component with consistent styling & underline lines
+// Heading Block
 const HeadingBlock = ({ text }) => (
     <div className="flex items-center mb-8">
         <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-white mr-8 leading-[2.15]">{text}</h2>
@@ -98,101 +56,169 @@ const Service = () => {
 
     return (
         <div className="font-poppins text-white bg-gray-900">
-            {/* Navbar */}
-            <nav className="max-w-full flex justify-between items-center px-6 md:px-16 py-5 bg-gradient-to-b from-[#160d27f2] to-[#160d27f2] fixed top-0 left-0 w-full z-50">
+            {/* ===== Navbar from Navbar_1 ===== */}
+            <nav
+                className="
+        w-full max-w-full
+        px-[clamp(0.8rem,2vw,1.8rem)]
+        md:px-[clamp(1rem,5vw,4rem)]
+        py-3
+        bg-[#10001e]
+        flex justify-between items-center
+        relative z-50
+        box-border
+      "
+            >
                 <Link
                     to="/"
-                    className="text-[#e1d5f9] font-bold text-[clamp(1rem,2.5vw,2rem)] tracking-wide"
+                    className="
+          text-[#e1d5f9]
+          font-bold
+          text-[clamp(1rem,2.5vw,2rem)]
+          tracking-wide
+          no-underline
+          select-none
+        "
                     aria-label="Brand"
                 >
-                    {/* Brand content here */}
+                    {/*Brand*/}
                 </Link>
 
-                {/* Hamburger */}
+                {/* Hamburger button */}
                 <button
-                    className="md:hidden flex flex-col gap-1.5 w-9 h-9 p-1.5 justify-center items-center border-none bg-transparent cursor-pointer"
                     aria-label="Toggle Menu"
                     onClick={() => setMenuOpen(!menuOpen)}
+                    className="
+          md:hidden
+          flex flex-col gap-1.5
+          w-9 h-9 p-1.5
+          justify-center items-center
+          bg-transparent border-none cursor-pointer
+          focus:outline-none
+        "
                 >
-                    <span className="block w-6 h-[3px] bg-white rounded transition-all"></span>
-                    <span className="block w-6 h-[3px] bg-white rounded transition-all"></span>
-                    <span className="block w-6 h-[3px] bg-white rounded transition-all"></span>
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? 'rotate-45 translate-y-[6px]' : ''
+                        }`}
+                    />
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? 'opacity-0' : 'opacity-100'
+                        }`}
+                    />
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? '-rotate-45 -translate-y-[6px]' : ''
+                        }`}
+                    />
                 </button>
 
                 {/* Menu */}
                 <div
-                    className={`flex items-center gap-8 transition-all duration-300 ${
+                    className={`
+          md:flex md:items-center
+          gap-8
+          transition-all duration-300 ease-in-out
+          ${
                         menuOpen
-                            ? 'absolute top-full left-0 w-full flex-col bg-[#16072d] p-6 pt-8 md:static md:flex-row md:bg-transparent md:p-0'
+                            ? 'absolute top-full left-0 w-full flex flex-col bg-[#16072d] p-6 pt-8 z-40 md:static md:flex-row md:bg-transparent md:p-0'
                             : 'hidden md:flex'
-                    }`}
+                    }
+        `}
                 >
-                    <ul className="flex flex-col md:flex-row gap-6 md:gap-12 w-full md:w-auto mb-6 md:mb-0">
-                        <li>
-                            <Link
-                                to="/"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                onClick={() => setMenuOpen(false)} // optional to close mobile menu on click
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/about_us"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                About Us
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/custom-service"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                Custom Service
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/pricing"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                Pricing
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/contact"
-                                className="uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] text-[#e1d5f9] rounded px-3 py-1 transition hover:bg-[#1d0537] hover:text-[#d4adfc]"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                Contact
-                            </Link>
-                        </li>
+                    <ul
+                        className="
+            list-none
+            flex flex-col md:flex-row
+            gap-[clamp(0.8rem,2vw,3rem)]
+            m-0 p-0
+            w-full md:w-auto
+          "
+                    >
+                        {[
+                            { label: 'Home', path: '/' },
+                            { label: 'About Us', path: '/about_us' },
+                            { label: 'Custom Service', path: '/custom-service' },
+                            { label: 'Pricing', path: '/pricing' },
+                            { label: 'Contact', path: '/contact' },
+                        ].map((item, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    to={item.path}
+                                    className="
+                block text-[#e1d5f9] font-semibold uppercase
+                text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                px-4 py-2 transition-colors duration-200
+                hover:bg-[#1d0537] hover:text-[#d4adfc]
+                focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+              "
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
-
-
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full md:w-auto">
-                        <Link to="/login" onClick={() => setMenuOpen(false)}>
-                            <button className="border border-white text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
-                                Log In
-                            </button>
+                    <div
+                        className="
+            flex flex-col md:flex-row
+            gap-3 md:gap-4
+            w-full md:w-auto
+            ml-0 md:ml-2
+          "
+                    >
+                        <Link
+                            to="/login"
+                            className="
+              w-full md:w-auto
+              px-5 py-2
+              border border-white
+              rounded-md
+              font-semibold
+              uppercase
+              text-[clamp(0.72rem,1vw,1rem)]
+              bg-transparent
+              text-white
+              cursor-pointer
+              transition-opacity duration-200
+              hover:opacity-80
+              focus:outline-none
+              focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+              text-center
+            "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Log In
                         </Link>
-                        <Link to="/sign_up" onClick={() => setMenuOpen(false)}>
-                            <button className="bg-gradient-to-r from-[#d946ef] to-[#9333ea] text-white px-5 py-2 rounded-md font-semibold uppercase text-[clamp(0.72rem,1vw,1rem)] hover:opacity-80 transition w-full md:w-auto">
-                                Sign Up
-                            </button>
+                        <Link
+                            to="/sign_up"
+                            className="
+              w-full md:w-auto
+              px-5 py-2
+              rounded-md
+              font-semibold
+              uppercase
+              text-[clamp(0.72rem,1vw,1rem)]
+              bg-gradient-to-r from-[#d946ef] to-[#9333ea]
+              border-none
+              text-white
+              cursor-pointer
+              transition-opacity duration-200
+              hover:opacity-80
+              focus:outline-none
+              focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+              text-center
+            "
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            Sign Up
                         </Link>
                     </div>
                 </div>
             </nav>
 
-            {/* Spacer for fixed navbar */}
-            <div className="h-[72px] md:h-[88px]" />
+
 
             {/* Resume Creation */}
             <section
@@ -231,7 +257,7 @@ const Service = () => {
                 <div className="max-w-4xl w-full text-left">
                     <HeadingBlock text="Service Overview" />
                     <p className="text-[#cccccc] text-[clamp(0.9rem,2vw,1rem)] leading-relaxed mb-8 max-w-xl">
-                        Get a professionally written, ATS-optimized resume crafted using smart AI tools and refined by human experts. Designed for job seekers, students, and professionals across all industries.
+                        Get a professionally written, ATS-optimized resume crafted using smart AI tools and refined by human experts.
                     </p>
                     <ul className="list-none p-0 m-0 space-y-4 max-w-md">
                         {features.map((feature, idx) => (
@@ -244,99 +270,65 @@ const Service = () => {
                 </div>
             </section>
 
-            {/* How It Works Section */}
+            {/* How It Works */}
             <section className="bg-[#160d27] py-16 px-8 md:px-40 flex flex-col max-w-full">
                 <HeadingBlock text="How it Works: AI + Human Workflow" />
-                <div className="flex flex-wrap justify-around gap-8 max-w-5xl w-full">
-                    {/* Uncomment and adjust your steps here if needed */}
-                </div>
+                <div className="flex flex-wrap justify-around gap-8 max-w-5xl w-full"></div>
             </section>
 
             {/* Delivery Plans */}
             <section className="bg-gradient-to-b from-[#160d27] to-[#1b0b25] py-16 px-6 md:px-16 text-center max-w-full">
                 <div className="max-w-6xl mx-auto text-left px-6 md:px-16">
                     <HeadingBlock text="Estimated Delivery Time" />
-                    <p className="text-[#ccc] text-[clamp(0.9rem,1.5vw,1rem)] mb-12 mt-[-2rem] max-w-3xl">
-                        Delivery in 1–3 days depending on your plan. Expedited option available.
-                    </p>
                     <div className="flex flex-wrap justify-center gap-8">
                         {plans.map((plan, idx) => (
                             <div
                                 key={idx}
-                                className={`flex flex-col items-center rounded-xl p-6 shadow-md shadow-black/30 min-w-[280px] max-w-[320px] flex-1 transition-transform hover:-translate-y-1 ${
-                                    plan.highlight ? 'bg-gradient-to-tr from-[#a558f3] to-[#6f2dbd] text-white' : 'bg-[#2c2c2e] text-gray-300'
+                                className={`flex flex-col items-center rounded-xl p-6 shadow-md min-w-[280px] max-w-[320px] flex-1 transition-transform hover:-translate-y-1 ${
+                                    plan.highlight
+                                        ? 'bg-gradient-to-tr from-[#a558f3] to-[#6f2dbd] text-white'
+                                        : 'bg-[#2c2c2e] text-gray-300'
                                 }`}
                             >
-                                <h3 className="text-[clamp(1.1rem,2vw,1.25rem)] font-semibold mb-4 text-center">{plan.name}</h3>
-                                <div className="flex items-baseline justify-center gap-1 mb-4">
-                                    <span className="text-[clamp(1.5rem,3vw,2rem)] font-bold">{plan.price}</span>
-                                    <span className="text-[clamp(0.75rem,1.5vw,0.9rem)] text-gray-400 pt-0.5">{plan.per}</span>
-                                </div>
-                                <ul className="list-none text-left mb-8 w-full space-y-3">
-                                    {plan.features.map((feature, i) => (
-                                        <li key={i} className="text-[clamp(0.8rem,1.3vw,0.95rem)] flex items-center gap-2">
-                                            <FaCircle className="text-[#a558f3] flex-shrink-0 text-[0.6rem]" />
-                                            {feature}
+                                <h3 className="mb-4">{plan.name}</h3>
+                                <ul className="list-none text-left mb-8">
+                                    {plan.features.map((f, i) => (
+                                        <li key={i} className="flex items-center gap-2">
+                                            <FaCircle className="text-[#a558f3] text-[0.6rem]" /> {f}
                                         </li>
                                     ))}
                                 </ul>
-                                <button
-                                    className={`w-full max-w-xs py-2.5 rounded-lg font-semibold cursor-pointer transition-colors ${
-                                        plan.highlight
-                                            ? 'bg-transparent border-white border-[1.5px] text-white hover:bg-white hover:text-[#6f2dbd]'
-                                            : 'bg-transparent border-[#a558f3] border-[1.5px] text-[#a558f3] hover:bg-[#a558f3] hover:text-white'
-                                    }`}
-                                >
-                                    Get started
-                                </button>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* FAQ & Footer Container */}
+            {/* FAQ & Footer */}
             <div
                 className="relative py-16 px-6 md:px-16 bg-cover bg-center"
                 style={{ backgroundImage: `url(${faqFooterBg.src || faqFooterBg})` }}
             >
                 <div className="max-w-6xl mx-auto relative z-10">
-                    <div className="flex items-center mb-8 justify-center md:justify-start">
-                        <HeadingBlock text="FAQ" />
-                    </div>
+                    <HeadingBlock text="FAQ" />
                     <div className="flex flex-col gap-6">
                         {faqData.map((faq, idx) => (
-                            <div
-                                key={idx}
-                                className="bg-white rounded-md shadow-sm overflow-hidden relative"
-                            >
+                            <div key={idx} className="bg-white rounded-md shadow-sm overflow-hidden relative">
                                 {activeIndex !== idx ? (
                                     <div
-                                        className="flex justify-between items-center p-4 cursor-pointer font-semibold text-[clamp(0.9rem,2vw,1rem)] text-black bg-gray-100"
+                                        className="flex justify-between items-center p-4 cursor-pointer text-black bg-gray-100"
                                         onClick={() => toggleAccordion(idx)}
-                                        aria-expanded={activeIndex === idx}
                                     >
                                         <span>{faq.question}</span>
-                                        <span className="w-9 h-9 flex justify-center items-center border-2 border-[#7028e4] bg-white text-[#7028e4] rounded-full text-xl transition-transform hover:scale-110 shadow-md shadow-[#7028e4]/50">
+                                        <span className="w-9 h-9 flex justify-center items-center border-2 border-[#7028e4] rounded-full text-xl">
                                             <IoAddOutline />
                                         </span>
                                     </div>
                                 ) : (
-                                    <div className="flex flex-wrap items-center bg-gradient-to-tr from-pink-400 via-purple-700 to-purple-900 text-white p-6 gap-6 relative">
-                                        <img
-                                            src={faq.image}
-                                            alt="faq visual"
-                                            className="object-contain rounded-lg flex-shrink-0 w-[clamp(150px,25vw,200px)] h-auto"
-                                        />
-                                        <div className="flex-1 min-w-[220px]">
-                                            <h3 className="text-[clamp(0.95rem,2vw,1rem)] font-bold mb-2">{faq.question}</h3>
-                                            <p className="text-[clamp(0.9rem,1.8vw,0.95rem)] text-gray-200 leading-relaxed">{faq.answer}</p>
-                                        </div>
-                                        <span
-                                            onClick={() => toggleAccordion(idx)}
-                                            className="absolute top-4 right-4 text-2xl cursor-pointer hover:text-gray-300"
-                                            aria-label="Collapse Answer"
-                                        >
+                                    <div className="flex flex-wrap items-center bg-gradient-to-tr from-pink-400 via-purple-700 to-purple-900 p-6 relative">
+                                        <img src={faq.image} alt="" className="rounded-lg w-[200px]" />
+                                        <div className="flex-1">{faq.answer}</div>
+                                        <span onClick={() => toggleAccordion(idx)} className="absolute top-4 right-4">
                                             <IoRemoveOutline />
                                         </span>
                                     </div>
@@ -344,71 +336,6 @@ const Service = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* Footer */}
-                    <footer className="mt-20 px-2 md:px-6 text-white">
-                        <div className="flex flex-wrap justify-between gap-8 mb-12 max-w-6xl mx-auto">
-                            {footerSections.map((section, idx) => (
-                                <div key={idx} className="flex flex-col min-w-[180px] flex-1 max-w-[220px]">
-                                    <h3 className="text-[clamp(0.9rem,2vw,1rem)] mb-4 text-yellow-400">// {section}</h3>
-                                    <ul className="list-none p-0 m-0 space-y-2">
-                                        {footerLinks.map((item, i) => (
-                                            <li
-                                                key={i}
-                                                className="text-[clamp(0.75rem,1.5vw,0.9rem)] cursor-pointer hover:text-yellow-400 transition-colors"
-                                            >
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-
-                        <hr className="border-t border-gray-800 mb-12" />
-
-                        <div className="flex flex-col md:flex-row gap-10 justify-between items-start md:items-center flex-wrap max-w-6xl mx-auto mb-12">
-                            <div className="flex-1 min-w-[280px]">
-                                <h4 className="text-[clamp(1rem,2vw,1.2rem)] mb-2">Never miss an update</h4>
-                                <p className="text-sm text-gray-400 max-w-xs">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolor?
-                                </p>
-                            </div>
-                            <div className="flex-1 min-w-[280px] max-w-md flex flex-col gap-3 w-full">
-                                <form className="flex gap-2 w-full max-w-md">
-                                    <input
-                                        type="email"
-                                        placeholder="example@gmail.com"
-                                        className="flex-grow rounded-l-md px-3 py-2 bg-white/10 text-white text-sm focus:outline-none"
-                                    />
-                                    <button
-                                        type="submit"
-                                        className="bg-yellow-400 text-black px-5 py-2 rounded-r-md font-semibold text-sm hover:bg-yellow-300 transition"
-                                    >
-                                        Join
-                                    </button>
-                                </form>
-                                <label className="flex items-center gap-2 text-sm text-gray-300 cursor-pointer select-none">
-                                    <input type="checkbox" className="accent-yellow-400 w-4 h-4 cursor-pointer" />
-                                    I agree to receive emails
-                                </label>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm gap-4 max-w-6xl mx-auto border-t border-gray-900 pt-6">
-                            <p>
-                                ©2025 by <span className="text-yellow-400 font-semibold">Code-X-Novas</span>
-                            </p>
-                            <div className="flex gap-6 flex-wrap">
-                                <a href="#" className="hover:text-yellow-400 transition">
-                                    Privacy Policy
-                                </a>
-                                <a href="#" className="hover:text-yellow-400 transition">
-                                    Terms of Service
-                                </a>
-                            </div>
-                        </div>
-                    </footer>
                 </div>
             </div>
         </div>
