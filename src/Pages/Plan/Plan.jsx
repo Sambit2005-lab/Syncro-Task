@@ -227,8 +227,7 @@ const Plan = () => {
                         </div>
                     </nav>
 
-                    {/* Spacer for fixed navbar */}
-                    <div className="h-[72px] md:h-[88px]" />
+
 
                     {/* Bundles Section */}
                     <section className="text-center px-4 sm:px-10 md:px-20 py-16 bg-transparent">

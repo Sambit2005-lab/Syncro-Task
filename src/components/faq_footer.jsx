@@ -52,15 +52,17 @@ const FaqFooter = () => {
             style={{ backgroundImage: "url('../src/assets/faq_footer_bkg.png')" }}
         >
             {/* Heading Block */}
-            <div className="flex items-center mb-9 w-fit">
-                <h2 className="text-white text-[3.5rem] font-bold mr-8 leading-[1.15] font-inter">
+            <div className="flex justify-start items-center gap-x-6 sm:gap-x-8 mb-8 flex-nowrap min-w-0 w-full">
+                <h2 className="shrink font-bold text-white leading-[1.15] text-[clamp(1.15rem,5vw,2rem)] sm:text-[clamp(1.5rem,3vw,2.5rem)]">
                     FAQ
                 </h2>
-                <div className="flex flex-col justify-center gap-4 mt-8">
-                    <div className="w-[100px] h-[3px] rounded bg-[#9333ea]" />
-                    <div className="w-[60px] h-[3px] rounded bg-[#9333ea]" />
+                <div className="flex flex-col justify-center gap-y-2 shrink-0">
+                    <div className="w-[80px] sm:w-[100px] h-[3px] rounded bg-[#9333ea]" />
+                    <div className="w-[48px] sm:w-[60px] h-[3px] rounded bg-[#9333ea]" />
                 </div>
             </div>
+
+
 
             {/* FAQ Accordion */}
             <div className="flex flex-col gap-6">
