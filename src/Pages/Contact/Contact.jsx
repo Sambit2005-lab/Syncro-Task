@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const sections = ['Product', 'Support', 'Resources', 'About'];
+const sections = ["Product", "Support", "Resources", "About"];
 const links = [
-    'What’s New',
-    'Design',
-    'Collaboration',
-    'Prototyping',
-    'Developer Handoff',
-    'All Features',
+    "What’s New",
+    "Design",
+    "Collaboration",
+    "Prototyping",
+    "Developer Handoff",
+    "All Features",
 ];
 
-const bgUrl = '../src/assets/contact_bkg1.svg'; // Change this to your actual asset path
+const bgUrl = "../src/assets/contact_bkg1.svg"; // Change to your actual asset path
 
 const Contact = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,91 +19,175 @@ const Contact = () => {
     return (
         <div
             className="min-h-screen w-full font-poppins bg-cover bg-center"
-            style={{ backgroundImage: `url(${bgUrl})` }
-        }
+            style={{ backgroundImage: `url(${bgUrl})` }}
         >
-            {/* ==================== NAVBAR ==================== */}
-            <nav className="w-full max-w-full px-4 md:px-10 py-4 flex items-center justify-between relative z-50">
-                <a
-                    href="#"
-                    className="font-bold text-[clamp(1rem,2.5vw,2rem)] tracking-wide text-[#e1d5f9]"
+            {/* ===== Navbar from Navbar_1 ===== */}
+            <nav
+                className="
+          w-full max-w-full
+          px-[clamp(0.8rem,2vw,1.8rem)]
+          md:px-[clamp(1rem,5vw,4rem)]
+          py-3
+          pt-6
+          pb-6
+          flex justify-between items-center
+          relative z-50
+          box-border
+        "
+            >
+                <Link
+                    to="/"
+                    className="
+            text-[#e1d5f9]
+            font-bold
+            text-[clamp(1rem,2.5vw,2rem)]
+            tracking-wide
+            no-underline
+            select-none
+          "
+                    aria-label="Brand"
                 >
-                    {/* Brand Logo/Name */}
-                </a>
-                {/* Hamburger */}
+                    {/* Brand */}
+                </Link>
+
+                {/* Hamburger button */}
                 <button
-                    className="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] rounded focus:outline-none"
                     aria-label="Toggle Menu"
                     onClick={() => setMenuOpen(!menuOpen)}
+                    className="
+            md:hidden
+            flex flex-col gap-1.5
+            w-9 h-9 p-1.5
+            justify-center items-center
+            bg-transparent border-none cursor-pointer
+            focus:outline-none
+          "
                 >
-                    <span className="block w-7 h-[3px] bg-white rounded transition-all"></span>
-                    <span className="block w-7 h-[3px] bg-white rounded transition-all"></span>
-                    <span className="block w-7 h-[3px] bg-white rounded transition-all"></span>
+          <span
+              className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                  menuOpen ? "rotate-45 translate-y-[6px]" : ""
+              }`}
+          />
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? "opacity-0" : "opacity-100"
+                        }`}
+                    />
+                    <span
+                        className={`block w-6 h-[3px] bg-white rounded transition-all ${
+                            menuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+                        }`}
+                    />
                 </button>
-                {/* Desktop/Menu */}
+
+                {/* Menu */}
                 <div
                     className={`
-            flex items-center gap-8 transition-all
-            ${menuOpen ? 'fixed inset-0 bg-[#16072d] flex-col pt-24 px-4 z-40 md:static md:bg-transparent md:flex-row md:pt-0 md:px-0'
-                        : 'hidden md:flex'}
+            md:flex md:items-center
+            gap-8
+            transition-all duration-300 ease-in-out
+            ${
+                        menuOpen
+                            ? "absolute top-full left-0 w-full flex flex-col bg-[#16072d] p-6 pt-8 z-40 md:static md:flex-row md:bg-transparent md:p-0"
+                            : "hidden md:flex"
+                    }
           `}
                 >
-                    {/* Links */}
-                    <ul className="flex flex-col md:flex-row gap-6 md:gap-8 mb-6 md:mb-0 w-full md:w-auto">
-                        <li>
-                            <a
-                                href="#"
-                                className="block uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] py-2 px-4 rounded text-[#e1d5f9] hover:bg-[#1d0537] hover:text-[#d4adfc] transition"
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className="block uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] py-2 px-4 rounded text-[#e1d5f9] hover:bg-[#1d0537] hover:text-[#d4adfc] transition"
-                            >
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className="block uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] py-2 px-4 rounded text-[#e1d5f9] hover:bg-[#1d0537] hover:text-[#d4adfc] transition"
-                            >
-                                Custom Service
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className="block uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] py-2 px-4 rounded text-[#e1d5f9] hover:bg-[#1d0537] hover:text-[#d4adfc] transition"
-                            >
-                                Pricing
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className="block uppercase font-semibold text-[clamp(0.78rem,1vw,1rem)] py-2 px-4 rounded text-[#e1d5f9] hover:bg-[#1d0537] hover:text-[#d4adfc] transition"
-                            >
-                                Contact
-                            </a>
-                        </li>
+                    <ul
+                        className="
+              list-none
+              flex flex-col md:flex-row
+              gap-[clamp(0.8rem,2vw,3rem)]
+              m-0 p-0
+              w-full md:w-auto
+            "
+                    >
+                        {[
+                            { label: "Home", path: "/" },
+                            { label: "About Us", path: "/about_us" },
+                            { label: "Custom Service", path: "/custom-service" },
+                            { label: "Pricing", path: "/pricing" },
+                            { label: "Contact", path: "/contact" },
+                        ].map((item, idx) => (
+                            <li key={idx}>
+                                <Link
+                                    to={item.path}
+                                    className="
+                    block text-[#e1d5f9] font-semibold uppercase
+                    text-[clamp(0.78rem,1vw,1rem)] rounded-md tracking-wide
+                    px-4 py-2 transition-colors duration-200
+                    hover:bg-[#1d0537] hover:text-[#d4adfc]
+                    focus:outline-none focus:bg-[#1d0537] focus:text-[#d4adfc]
+                  "
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
-                    {/* Buttons */}
-                    <div className="flex flex-col md:flex-row gap-3 md:gap-2 w-full md:w-auto">
-                        <button className="border border-white text-white font-semibold uppercase rounded-md px-5 py-2 text-[clamp(0.72rem,1vw,1rem)] bg-transparent hover:opacity-85 transition">
+                    <div
+                        className="
+              flex flex-col md:flex-row
+              gap-3 md:gap-4
+              w-full md:w-auto
+              ml-0 md:ml-2
+            "
+                    >
+                        <Link
+                            to="/login"
+                            className="
+                w-full md:w-auto
+                px-5 py-2
+                border border-white
+                rounded-md
+                font-semibold
+                uppercase
+                text-[clamp(0.72rem,1vw,1rem)]
+                bg-transparent
+                text-white
+                cursor-pointer
+                transition-opacity duration-200
+                hover:opacity-80
+                focus:outline-none
+                focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+                text-center
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Log In
-                        </button>
-                        <button className="bg-gradient-to-r from-fuchsia-500 to-purple-700 text-white font-semibold uppercase rounded-md px-5 py-2 text-[clamp(0.72rem,1vw,1rem)] hover:opacity-85 transition mt-1 md:mt-0 border-none">
+                        </Link>
+                        <Link
+                            to="/sign_up"
+                            className="
+                w-full md:w-auto
+                px-5 py-2
+                rounded-md
+                font-semibold
+                uppercase
+                text-[clamp(0.72rem,1vw,1rem)]
+                bg-gradient-to-r from-[#d946ef] to-[#9333ea]
+                border-none
+                text-white
+                cursor-pointer
+                transition-opacity duration-200
+                hover:opacity-80
+                focus:outline-none
+                focus:ring-2 focus:ring-[#a879ff] focus:ring-offset-1
+                text-center
+              "
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Sign Up
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </nav>
 
-            {/* ==================== REQUEST SERVICE ==================== */}
+            {/* Spacer so content isn't hidden under fixed navbar */}
+            <div className="h-[72px] md:h-[88px]" />
+
+            {/* ===== Request Service ===== */}
             <section className="flex flex-col md:flex-row justify-between gap-10 md:gap-12 py-16 px-4 md:px-10 text-white">
                 <div className="flex-1 flex flex-col justify-center min-w-[220px] mb-8 md:mb-0">
                     <h1 className="font-extrabold text-3xl md:text-[2.8rem] leading-tight">
@@ -112,10 +197,9 @@ const Contact = () => {
                         Custom Service
                     </h1>
                 </div>
-
                 <form
                     className="flex-1 flex flex-col gap-6 max-w-2xl min-w-[220px] w-full px-4 py-8 rounded-2xl backdrop-blur-lg bg-gradient-to-br from-[#21263b88] via-[#21263b88] to-[#191b2c88]"
-                    onSubmit={e => e.preventDefault()}
+                    onSubmit={(e) => e.preventDefault()}
                 >
                     <div className="flex flex-col gap-2">
                         <label className="text-sm font-medium">Service Title</label>
@@ -144,8 +228,7 @@ const Contact = () => {
                         <label className="text-sm font-medium">Upload file</label>
                         <input
                             type="file"
-                            className="text-white file:bg-[#2c2c35] file:text-white file:rounded-md file:px-4 file:py-2 file:mr-2 file:border-0 file:cursor-pointer
-                 file:hover:bg-[#444] text-sm"
+                            className="text-white file:bg-[#2c2c35] file:text-white file:rounded-md file:px-4 file:py-2 file:mr-2 file:border-0 file:cursor-pointer file:hover:bg-[#444] text-sm"
                         />
                     </div>
                     <button
@@ -157,7 +240,7 @@ const Contact = () => {
                 </form>
             </section>
 
-            {/* ==================== FOOTER ==================== */}
+            {/* ===== Footer ===== */}
             <footer className="w-full bg-transparent text-white px-4 md:px-10 pt-16 pb-8">
                 {/* Footer Links */}
                 <div className="flex flex-wrap gap-10 justify-between pb-8">
@@ -177,15 +260,13 @@ const Contact = () => {
                         </div>
                     ))}
                 </div>
-
                 <hr className="border-t border-white/15 my-8" />
-
-                {/* Newsletter */}
                 <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-10 md:gap-16 mb-8">
                     <div className="max-w-md">
                         <h4 className="text-base font-medium mb-1">Never miss an update</h4>
                         <p className="text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolor?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+                            dolor?
                         </p>
                     </div>
                     <div className="min-w-[260px] flex flex-col gap-3 w-full max-w-sm">
@@ -205,8 +286,6 @@ const Contact = () => {
                         </label>
                     </div>
                 </div>
-
-                {/* Legal */}
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center text-sm text-gray-400 gap-3">
                     <p>
                         ©2025 by <span className="text-white font-semibold">Code-X-Novas</span>

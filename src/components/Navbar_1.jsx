@@ -11,6 +11,8 @@ const Navbar_1 = () => {
         px-[clamp(0.8rem,2vw,1.8rem)]
         md:px-[clamp(1rem,5vw,4rem)]
         py-3
+        pt-6
+        pb-6
         bg-[#10001e]
         flex justify-between items-center
         relative z-50
