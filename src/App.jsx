@@ -22,6 +22,7 @@ import Services from "./components/Services.jsx";
 import PricingPlans from "./components/Pricing_plans.jsx";
 import About_us from "./components/About_us.jsx";
 import Home from "./Pages/Home/Home.jsx";
+import Login from "./Pages/Login/Login.jsx";
 
 const App = () => {
   return (
@@ -55,6 +56,7 @@ const App = () => {
 
             {/*<Route path="/login" element={<Login/>} />*/}
             <Route path="/sign_up" element={<Sign_up/>} />
+            <Route path="/login" element={<Login/>} />
 
             <Route
                 path="*"

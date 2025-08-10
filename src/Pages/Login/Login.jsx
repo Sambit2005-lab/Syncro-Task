@@ -1,14 +1,14 @@
 import React from "react";
 import bgImg from "../../assets/bkg.png"; // Adjust the path if Sign_up.jsx and assets are in different folders
 
-const Sign_up = () => {
+const Login = () => {
     return (
         <div
             className="min-h-screen w-full flex items-center justify-center bg-center bg-cover p-4"
             style={{ backgroundImage: `url(${bgImg})` }}
         >
             <div className="w-full max-w-md bg-white/5 border border-white/15 backdrop-blur-xl rounded-2xl p-8 text-white shadow-[0_0_30px_rgba(0,0,0,0.25)]">
-                <h2 className="text-2xl font-semibold mb-1">Sign up</h2>
+                <h2 className="text-2xl font-semibold mb-1">Login</h2>
                 <p className="text-[0.95rem] text-[#cfcfcf] mb-6">Start your 7-day free trial.</p>
 
                 <form className="flex flex-col gap-5">
@@ -59,7 +59,7 @@ const Sign_up = () => {
                             alt="Google"
                             className="w-5 h-5"
                         />
-                        Sign up with Google
+                        Login with Google
                     </button>
                     <button
                         className="flex-1 flex items-center justify-center gap-2 py-3 bg-black rounded-lg text-white text-[0.85rem] font-medium border-none cursor-pointer hover:bg-[#1a1a1a] transition"
@@ -69,7 +69,7 @@ const Sign_up = () => {
                             alt="Apple"
                             className="w-5 h-5"
                         />
-                        Sign up with Apple
+                        Login with Apple
                     </button>
                 </div>
             </div>
@@ -77,4 +77,4 @@ const Sign_up = () => {
     );
 };
 
-export default Sign_up;
+export default Login;
