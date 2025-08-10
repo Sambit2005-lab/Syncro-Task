@@ -50,28 +50,29 @@ const Sign_up = () => {
 
                 <hr className="my-7 border-0 h-px bg-white/15" />
 
-                <div className="flex flex-wrap gap-4 justify-between sm:flex-nowrap">
+                <div className="flex flex-col sm:flex-row gap-4">
                     <button
-                        className="flex-1 flex items-center justify-center gap-2 py-3 bg-black rounded-lg text-white text-[0.85rem] font-medium border-none cursor-pointer hover:bg-[#1a1a1a] transition"
+                        className="flex-1 flex items-center justify-center gap-2 py-3 bg-black rounded-lg text-white text-[0.85rem] font-medium border-none cursor-pointer hover:bg-[#1a1a1a] transition w-full"
                     >
                         <img
                             src="https://img.icons8.com/fluency/48/google-logo.png"
                             alt="Google"
                             className="w-5 h-5"
                         />
-                        Sign up with Google
+                        Login with Google
                     </button>
                     <button
-                        className="flex-1 flex items-center justify-center gap-2 py-3 bg-black rounded-lg text-white text-[0.85rem] font-medium border-none cursor-pointer hover:bg-[#1a1a1a] transition"
+                        className="flex-1 flex items-center justify-center gap-2 py-3 bg-black rounded-lg text-white text-[0.85rem] font-medium border-none cursor-pointer hover:bg-[#1a1a1a] transition w-full"
                     >
                         <img
                             src="https://img.icons8.com/office/40/mac-os.png"
                             alt="Apple"
                             className="w-5 h-5"
                         />
-                        Sign up with Apple
+                        Login with Apple
                     </button>
                 </div>
+
             </div>
         </div>
     );
