@@ -15,41 +15,49 @@ const services = [
         icon: <FaFileAlt />,
         title: "Resume Creation",
         desc: "Create a standout resume tailored to your goals. Choose styling that fits your domain + optimize keywords and layout to impress recruiters and land your dream job faster!",
+        link: "/custom-service",
     },
     {
         icon: <HiOutlineDocumentReport />,
         title: "Business Report",
         desc: "Free, easy, flexible builder. Fill in your data, pick a template, and download instantly. No experience needed — let your charm pop louder!",
+        link: "/get-started/business-report",
     },
     {
         icon: <FaPenFancy />,
         title: "Pitch Deck Design",
         desc: "From concept to boardroom in 5 minutes — no design experience required.",
+        link: "/get-started/pitch-deck",
     },
     {
         icon: <MdOutlineAnalytics />,
         title: "Data Visualisation",
         desc: "Convert raw numbers into boardroom-ready visuals and presentations in seconds. No fluff — no coding or design expertise required.",
+        link: "/get-started/data-vis",
     },
     {
         icon: <FaEnvelopeOpenText />,
         title: "Blog Post Drafting",
         desc: "From spreadsheet chaos to elegant insights — effortlessly start storytelling today.",
+        link: "/get-started/blog-drafting",
     },
     {
         icon: <FaCheckCircle />,
         title: "Proofreading",
         desc: "Transform raw sentences into stunning, clean copy with just one click — no design skills needed.",
+        link: "/get-started/proofreading",
     },
     {
         icon: <FaChartBar />,
         title: "Social Media Content",
         desc: "Turn boring spreadsheets into stunning visual stories — no design skills needed.",
+        link: "/get-started/social-media-content",
     },
     {
         icon: <FaTools />,
         title: "Project Planning Tools",
         desc: "Turn Chaotic Plans into Clear Roadmaps — Instantly.",
+        link: "/get-started/project-planning",
     },
 ];
 
@@ -69,8 +77,6 @@ const Services = () => {
                     <div className="w-[48px] sm:w-[60px] h-[3px] rounded bg-[#9333ea]" />
                 </div>
             </div>
-
-
 
             {/* Services Grid */}
             <div
@@ -110,7 +116,7 @@ const Services = () => {
                             {service.desc}
                         </p>
                         {/* Button */}
-                        <button
+                        <a
                             className="opacity-0 pointer-events-none mt-[2.1rem] px-[clamp(0.85em,2vw,1.15em)] py-[clamp(0.85em,2vw,1.15em)]
             rounded-[0.9em] font-bold text-[clamp(1rem,1vw,1rem)] border-none text-white bg-[#a234fd]
             shadow-[0_1px_14px_0_rgba(147,51,234,0.21)] transition
@@ -121,16 +127,17 @@ const Services = () => {
             "
                             type="button"
                             aria-label={`Get started with ${service.title}`}
+                            href={service.link}
                         >
                             Get Started <span className="text-[1.25em] ml-1">→</span>
-                        </button>
+                        </a>
                     </div>
                 ))}
             </div>
 
             <style>{`
         /* Custom hover to show button */
-        .grid > div:hover > button {
+        .grid > div:hover > a {
           opacity: 1 !important;
           pointer-events: auto !important;
           margin-top: clamp(4em, 21%, 7em);
